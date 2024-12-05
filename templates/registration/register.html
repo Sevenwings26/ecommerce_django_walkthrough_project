@@ -1,0 +1,18 @@
+<!-- {% extends 'const/base.html' %}  -->
+{% block title %} Sign up {% endblock %} 
+{% block content %} 
+<div style="display: flex; flex-direction: column; justify-content: center; width: 50%; margin: auto;">
+
+<form action="" method="post">
+  <h2 class="m2 text-3xl">Register as a New User</h2>
+  {% csrf_token %} 
+  <div class="">
+    {{form.as_p}}
+  </div>
+  <p class="mb-3">Already have an account? Login --- <a href="{% url 'login' %}"><span class="text-red-600 underline uppercase">Here</span></a></p>
+  <button type="submit" style="width: 50%;">Sign Up</button>
+</form>
+</div>
+{% endblock %}
+
+

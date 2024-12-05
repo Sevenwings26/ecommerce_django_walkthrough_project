@@ -1,0 +1,18 @@
+{% extends 'const/base.html' %}
+{% load static %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<div style="display: flex; flex-direction: column; justify-content: center; width: 50%; margin: auto;">
+    <form action="" method="post" class="">
+      {% csrf_token %}
+        <h2 class="">Please, Login!</h2>
+        <div class="">
+            {{ form.as_p }}
+        </div>
+        <p class="mb-3">Already have an account? <a href="{% url 'sign-up' %}">Register</a></p>
+        {% comment %} <p class="mb-3">Reset Password - Click <a href="{% url 'password_reset' %}"><span class="text-gray-800">Here</span></a></p> {% endcomment %}
+        <button type="submit" class="">Login</button>
+    </form>
+</div>
+{% endblock %}
+
