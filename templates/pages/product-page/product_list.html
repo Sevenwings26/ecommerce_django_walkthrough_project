@@ -1,0 +1,34 @@
+{% extends "const/base.html" %}
+{% block content %}
+<body>
+    <h1>Product List</h1>
+    <a href="{% url 'upload_product' %}">Add New Product</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>
+                        <a href="{% url 'product_update' product.pk %}">Edit</a>
+                        <a href="{% url 'product_delete' product.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% comment %} </html> {% endcomment %}
+
+{% endblock %}

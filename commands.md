@@ -21,21 +21,20 @@ Django 5.1.3
     - Make migrations: `python manage.py makemigrations`
                         `python manage.py migrate`
 
-
     fixing migration errors ---- python manage.py migrate admin --fake 
-    
+
+
 3. **Load templates and static files**
     Template source - Colorlib
     configure template and static files in the _settings.py_ file
     - TEMPLATES = {"DIRS": [BASE_DIR / "templates"],}   
     - STATICFILES_DIRS = [BASE_DIR / "static"]
-    
-    
-## - Create Custome User 
+
+
+# Funtionalities       
+1. Create Custom User 
     - Use email as login requirement
-
-
-
-
-
-
+    - register, login, password-reset.
+    
+2. E-commerce functionalities 
+    - Upload products through platform not the admin site.

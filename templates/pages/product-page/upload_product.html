@@ -1,0 +1,11 @@
+{% extends "const/base.html" %}
+
+{% block content %}
+<h1>Upload Product</h1> 
+<a href="{% url 'product_list' %}">List Products</a>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload Product</button>
+</form>
+{% endblock %}
