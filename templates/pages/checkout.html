@@ -1,0 +1,6 @@
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">
+        Pay with Paystack (N{{ order.get_cart_total }})
+    </button>
+</form>

@@ -11,15 +11,22 @@ urlpatterns = [
     path("blogs", views.blog, name="blog"),
     path("contact", views.contact, name="contact"),
 
+    path('cart/', views.cart, name='cart'),
+    path('add-to-cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('remove-from-cart/<int:pk>/', views.remove_from_cart, name='remove_from_cart'),
+    path('checkout/', views.checkout, name='checkout'),
+
     # authentication 
     path("login/", views.CustomLoginView.as_view(), name='login'),
     path("sign-up/", views.register, name='sign-up'),
     # path("logout/", LogoutView.as_view(next_page='login'), name='logout'),
     path("logout/", views.logout_view, name="logout"),
 
-    # path("password-reset/", PasswordResetView.as_view(template_name='registration/password_reset.html', email_template_name='registration/password_reset_email.html'), name='password_reset',),
+    
+
+    path("password-reset/", PasswordResetView.as_view(template_name='registration/password_reset.html', email_template_name='registration/password_reset_email.html'), name='password_reset',),
     # """Modified password reset functionality""",
-    path("password-reset/", views.CustomPasswordResetView.as_view(), name='password_reset'),
+    # path("password-reset/", views.CustomPasswordResetView.as_view(), name='password_reset'),
     path("password-reset/done/", PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
     path('password-reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
     path('password-reset-complete', PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),

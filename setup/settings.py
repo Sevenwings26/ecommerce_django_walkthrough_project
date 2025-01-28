@@ -65,6 +65,9 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+
+                # for add to cart   
+                "users.processor.cart_data"
             ],
         },
     },
@@ -133,8 +136,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "organi" 
-EMAIL_HOST_PASSWORD = "qmfrvywwtnkwhqdh"
+# EMAIL_HOST_USER = "organi" 
+EMAIL_HOST_USER = "oganiapp" 
+# EMAIL_HOST_PASSWORD = "qmfrvywwtnkwhqdh"
+EMAIL_HOST_PASSWORD = "eittdpbramufhkiq"
 DEFAULT_FROM_EMAIL = "iarowosola25@gmail.com"
 # ACCOUNT_EMAIL_SUBJECT_PREFIX = " "
 
+
+PAYSTACK_PUBLIC_KEY = ""

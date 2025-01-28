@@ -3,6 +3,9 @@ from django.utils.timezone import now
 # user 
 from django.conf import settings
 
+# to handle cart    
+# from users.models import User
+
 # Category Model
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -30,5 +33,8 @@ class Product(models.Model):
         return f"{self.name} - Price: {self.price}"
 
 
-# lucidcharts 
+# # lucidcharts 
+# Vision for my life 
+# What is the vision for my life? 
 
+# Family plan?
